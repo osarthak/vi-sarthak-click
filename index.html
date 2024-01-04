@@ -1,0 +1,98 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bsc.CS Sem-VI</title>
+
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="main">
+        <h1>Fundamental of Linux Administration</h1>
+        <p>what is cached?</p>
+        <p>
+            cached is a same link where you will be redirect to web acheive which is
+            more privacy focused version of that link but it will be slower to load.
+            your ip won't exposed to the author of that site and won't show any
+            annoying pop-ups and ads while visiting. [recommanded]
+        </p>
+        <h2>UNIT I</h2>
+        <ol class="olpadding">
+            <li>
+                <a href="https://www.redhat.com/sysadmin/linux-user-group-management">Managing users and Managing
+                    groups</a>
+                &nbsp; &nbsp;
+                <a
+                    href="https://web.archive.org/web/https://www.redhat.com/sysadmin/linux-user-group-management">[cached]</a>
+            </li>
+
+            <li>
+                <a href="https://www.redhat.com/sysadmin/manage-permissions">Managing permissions</a>
+                &nbsp; &nbsp;
+                <a href="https://web.archive.org/web/https://www.redhat.com/sysadmin/manage-permissions">[cached]</a>
+            </li>
+
+            <li>
+                <a href="https://www.redhat.com/sysadmin/managing-users-passwd">Managing passwords</a>
+                &nbsp; &nbsp;
+                <a
+                    href="https://web.archive.org/web/20230724161048/https://www.redhat.com/sysadmin/managing-users-passwd">[cached]</a>
+
+                <br>
+                <div class="code codespace">
+                    $ sudo passwd [username] [parameter]
+                </div>
+                <p>Here are some comman parameter used to manage passwords</p>
+                <ol>
+                    <li>-S = See the STATUS of the user account password</li>
+                    <li>-l = used to LOCK the user password</li>
+                    <li>-u = to UNLOCK the user account password</li>
+                    <li>-d = to DELETE the password (user will login the account without password)</li>
+                    <li>-e = immedatly EXPIRE the password. force user to change the password by expiring user password
+                    </li>
+                    <li>-n = user won't able to change the password before the NUMBER given with -n</li>
+                    <li>-x = the MAX number of days remain valid after that user got promt to change the password</li>
+                    <li>-w = get WARN by receiving warnings that the password will expire.</li>
+                    <li>-i = account get expire if user INACTIVE or didn't change the password after the expire time
+                    </li>
+
+
+                </ol>
+            </li>
+
+            <li>
+                <a
+                    href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/system_administrators_guide/chap-gaining_privileges">Granting
+                    system Administrator privileges to regular user</a>
+                &nbsp; &nbsp;
+                <a
+                    href="https://web.archive.org/web/20231206194412/https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/system_administrators_guide/chap-gaining_privileges">[cached]</a>
+                <p>Two way to grant Administration privileges</p>
+                <ol>
+                    <li>by adding user in sudo or wheel group</li>
+
+                    <div class="code">$ sudo usermod -a -G wheel [username]</div>
+
+
+                    <p>or</p>
+
+                    <div class="code codespace">
+                        $ sudo usermod -a -G sudo [username]
+                    </div>
+                    <li>by editing /etc/sudoers file and add line [username] ALL=(ALL) ALL</li>
+                    <div class="code">
+                        $ sudo nano /etc/sudoers
+                    </div>
+                    <p> </p>
+
+                </ol>
+            </li>
+
+        </ol>
+
+    </div>
+</body>
+
+</html>
