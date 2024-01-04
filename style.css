@@ -28,6 +28,35 @@ h2{
     margin-top:10px;
     margin-bottom: 10px;
 }
+
+.ac-color{
+    background-color: #292929;
+    color: wheat
+
+}
+
+.btn{
+    border: 0;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.inline {
+    display: inline;
+}
+
+.margin-right-15{
+    margin-right: 15px;
+}
+
+.margin-right-25{
+    margin-right: 25px;
+}
+
+.margin-top-25{
+    margin-top: 25px;
+}
 .code{
     padding: 10px 8px;
     background-color: #292929;
