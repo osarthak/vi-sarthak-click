@@ -20,6 +20,12 @@ h2{
     margin-top: 40px;
 }
 
+ul {
+    list-style-type: disc;
+    list-style-image: none;
+}
+
+
 .olpadding{
     padding: 0px 20px;
 }
@@ -71,6 +77,10 @@ h2{
     font-family: Menlo, monospace;
     color: wheat;
     border-radius: 5px;
+
+    /* for scrolling */
+    overflow: auto;
+    white-space: nowrap;
 }
 
 a {
