@@ -18,8 +18,9 @@
             your ip won't exposed to the author of that site and won't show any
             annoying pop-ups and ads while visiting. [recommanded]
         </p>
-        <div class="margin-top-25" >
-            <p class=" inline margin-right-15">View syllabus </p> <a href="download/vi.pdf"><button class="ac-color btn">View</button></a>
+        <div class="margin-top-25">
+            <p class=" inline margin-right-15">View syllabus </p> <a href="download/vi.pdf"><button
+                    class="ac-color btn">View</button></a>
         </div>
         <h2>UNIT I</h2>
         <ol class="olpadding">
@@ -44,11 +45,11 @@
                     href="https://web.archive.org/web/20230724161048/https://www.redhat.com/sysadmin/managing-users-passwd">[cached]</a>
 
                 <br>
-                <div class="code codespace">
+                <div class="code codespace-up">
                     $ sudo passwd [username] [parameter]
                 </div>
                 <p>Here are some comman parameter used to manage passwords</p>
-                <ol>
+                <ul>
                     <li>-S = See the STATUS of the user account password</li>
                     <li>-l = used to LOCK the user password</li>
                     <li>-u = to UNLOCK the user account password</li>
@@ -62,7 +63,7 @@
                     </li>
 
 
-                </ol>
+                </ul>
             </li>
 
             <li>
@@ -81,7 +82,7 @@
 
                     <p>or</p>
 
-                    <div class="code codespace">
+                    <div class="code codespace-down">
                         $ sudo usermod -a -G sudo [username]
                     </div>
                     <li>by editing /etc/sudoers file and add line [username] ALL=(ALL) ALL</li>
@@ -94,11 +95,113 @@
             </li>
 
             <li>
-                <a
-                    href="https://www.digitalocean.com/community/tutorials/how-to-set-filesystem-quotas-on-ubuntu-20-04">
+                <a href="https://www.digitalocean.com/community/tutorials/how-to-set-filesystem-quotas-on-ubuntu-20-04">
                     Disk Quotas</a>
                 &nbsp; &nbsp;
-                <a href="https://web.archive.org/web/https://www.digitalocean.com/community/tutorials/how-to-set-filesystem-quotas-on-ubuntu-20-04">[cached]</a>
+                <a
+                    href="https://web.archive.org/web/https://www.digitalocean.com/community/tutorials/how-to-set-filesystem-quotas-on-ubuntu-20-04">[cached]</a>
+                <p>Quotas are used to limit the amount of disk space a user or group can use on a filesystem. Without
+                    such limits, a user could fill up the machine’s disk and cause problems for other users and
+                    services.
+                <ol>
+                    <!-- step 1 -->
+                    <li>
+                        <h3>Installing the Quota Tools</h3>
+                    </li>
+                    <p>Install the quota package by using your linux distrubution package manager i.e apt, yum or dnf
+                        and pacman,
+                        here is an example of installing of quota package on debian distro using apt </p>
+                    <div class="code">$ sudo apt install quota</div>
+
+                    <!-- step 2 -->
+                    <li>
+                        <h3>Updating filesystem mount options</h3>
+                    </li>
+                    <p>To activate quotas on a particular filesystem, you need to mount it with a few quota-related
+                        options specified. You can do this by updating the filesystem’s entry in the /etc/fstab
+                        configuration file</p>
+                    <p>Update the line pointing to the root filesystem by replacing the defaults option with the
+                        appending usrquota,grpquota options using nano or vim editor</p>
+                    <div class="code">
+                        # / was on /dev/sda1 during installation <br>
+                        UUID=e89ac59c-bad7-4da2-aa9a-537fea9a646e / ext4 errors=remount-ro,usrquota,grpquota 0 1
+
+                    </div>
+                    <p>Remount the filesystem to make the new options take effect</p>
+                    <div class="code">$ sudo mount -o remount /</div>
+
+                    <!-- step 3 -->
+                    <li>
+                        <h3>checking and enabling quotas</h3>
+                    </li>
+                    <p>Before finally turning on the quota system, you need to manually run the quotacheck command once
+                    </p>
+                    <div class="code">$ sudo quotacheck -ug /</div>
+                    <p>This command creates the files /aquota.user and /aquota.group. These files contain information
+                        about the limits and usage of the filesystem, and they need to exist before you turn on quota
+                        monitoring</p>
+                    <ul>
+                        <li>u: specifies that a user-based quota file should be created</li>
+                        <li>g: indicates that a group-based quota file should be created</li>
+                    </ul>
+
+                    <p>Now Enable or turn on the quota system</p>
+
+                    <div class="code">$ sudo quotaon -v /</div>
+
+                    <!-- step 4 -->
+                    <li>
+                        <h3>Using quotas</h3>
+                    </li>
+                    <p>There are a few ways you can set quotas for users or groups. Here, you’ll go over how to set
+                        quotas with both the edquota and setquota commands</p>
+
+                    <ul>
+                        <li>Set a User Quota</li>
+                        <ol>
+                            <!-- first way -->
+                            <li>By using edquota</li>
+                            <p>Use the edquota command to edit quotas</p>
+                            <div class="code">$ sudo edquota -u [username]</div>
+                            <p>The -u option specifies that this is a user quota you’ll be editing. If you’d like to
+                                edit a
+                                group’s quota instead, use the -g option in its place.</p>
+                            <p>Save and close the file. To check the new quota you can use the quota command</p>
+                            <div class="code codespace-down">$ sudo quota -vs [username]</div>
+
+                            <!-- second way -->
+                            <li>By using setquota </li>
+                            <p>Unlike edquota, setquota will update your user’s quota information in a single command,
+                                without
+                                an interactive editing step. You will specify the username and the soft and hard limits
+                                for both
+                                block- and inode-based quotas, and finally the filesystem to apply the quota to</p>
+                            <div class="code codespace-down">$ sudo setquota -u [username] 500M 700M 0 0 /</div>
+
+                            
+
+                        </ol>
+
+                        <!-- generating quotas report -->
+                        <li>Generating quota report</li>
+                        <p>To generate a report on current quota usage for all users on a particular filesystem, use the repquota command</p>
+                        <div class="code codespace-down">
+                            $ sudo repquota -s /
+
+                        </div>
+                        
+                        <!-- setting up the grace period -->
+                        <li>Setting up the grace period</li>
+                        <p>You can configure the period of time where a user is allowed to float above the soft limit. Use the setquota</p>
+                        <div class="code">$ sudo setquota -t 864000 864000 /</div>
+
+
+
+                    </ul>
+
+
+                </ol>
+                </p>
             </li>
 
         </ol>

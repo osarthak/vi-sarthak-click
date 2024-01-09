@@ -24,11 +24,13 @@ h2{
     padding: 0px 20px;
 }
 
-.codespace{
-    margin-top:10px;
-    margin-bottom: 10px;
+.codespace-down{
+    margin-bottom: 18px;
 }
 
+.codespace-up{
+    margin-top:18px;
+}
 .ac-color{
     background-color: #292929;
     color: wheat
@@ -81,6 +83,10 @@ a {
 
 li{
     margin-bottom: 10px;
+}
+
+li h3{
+    color: #6e6e71
 }
 
 a:hover{
