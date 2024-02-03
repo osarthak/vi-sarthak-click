@@ -293,30 +293,16 @@ a:hover{
 
     #left-menu{
         position:sticky;
-        width: 95%;
+        width: 90%;
         height: auto;
-        margin-top: 80px;
+        margin-top: 70px;
         
         padding: 10px;
         display: none;
     }
 
-    .left-menu-mobile{
-        width: 95%;
-        padding: 1px;
-        /* height: 20px; */
-        background-color: var(--mul-bg-color);
-        border-radius: var(--left-menu-radius);
-    }
-
-    .left-menu-mobile p{
-        text-align: center;
-        
-        
-    }
-
     .floating-btn {
-        padding: 20px;
+        padding: 15px;
         background-color: #414142;
         position: fixed;
         top: 15px;
