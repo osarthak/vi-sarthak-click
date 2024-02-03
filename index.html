@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -6,207 +7,380 @@
     <title>Bsc.CS Sem-VI</title>
 
     <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
 </head>
 
 <body>
-    <div class="main">
-        <h1>Linux Administration</h1>
-        <!-- <p>what is cached?</p> -->
-        <!-- <p>
-            cached is a same link where you will be redirect to web acheive which is
-            more privacy focused version of that link but it will be slower to load.
-            your ip won't exposed to the author of that site and won't show any
-            annoying pop-ups and ads while visiting. [recommanded]
-        </p> -->
-        <div class="margin-top-25 view-style">
-            <p class=" inline margin-10 margin-right-15">View syllabus </p> <a href="download/vi.pdf"><button
-                    class="ac-color btn">View</button></a>
+    <!-- <div class=" flex view-style"><a class="center-text" href="colleges.html"> M.Sc CS college list</a></div> -->
+
+    <div class="flex">
+        <div class=" hide-on-desktop floating-btn cursor" onclick="myFunction()"><img width="20" height="20"
+                src="static/icons8-menu-50.png" alt=""></div>
+        <!-- <div class="left-menu-mobile"><p>click me to show table of content</p></div> -->
+
+        <div id="left-menu">
+            <h2>Table of content</h2>
+
+            <ol>
+                
+                <h3 class="margin-top-25 margin-bottom-10"> UNIT I</h3>
+                <li><a href="#user-group-management">Managing users and Managing groups</a> </li>
+                <li><a href="#managing-permissions">Managing permissions</a></li>
+                <li><a href="#managing-passwords">Managing passwords</a></li>
+                <li><a href="#grant-sudo">Granting
+                        system Administrator privileges to regular user</a></li>
+                <li><a href="#disk-quotas">Disk Quotas</a></li>
+            </ol>
+
+            <ol>
+                
+                <h3 class="margin-top-25 margin-bottom-10">UNIT V</h3>
+                <li><a href="#Setting-Up-a-SSH-Server">Setting Up an SSH Server</a> </li>
+            </ol>
         </div>
-        <h2>UNIT I</h2>
-        <ol class="olpadding">
-            <li>
-                <a href="https://www.redhat.com/sysadmin/linux-user-group-management">Managing users and Managing
-                    groups</a>
-                &nbsp; &nbsp;
-                <a
-                    href="https://web.archive.org/web/https://www.redhat.com/sysadmin/linux-user-group-management">[cached]</a>
-            </li>
+        <div class="main">
+            <h1>Linux Administration</h1>
+            <!-- <p>what is cached?</p> -->
+            <!-- <p>
+                cached is a same link where you will be redirect to web acheive which is
+                more privacy focused version of that link but it will be slower to load.
+                your ip won't exposed to the author of that site and won't show any
+                annoying pop-ups and ads while visiting. [recommanded]
+            </p> -->
+            <div class="margin-top-25 view-style">
+                <p class=" inline margin-10 margin-right-15">View syllabus </p> <a href="download/vi.pdf"><button
+                        class="ac-color btn">View</button></a>
+            </div>
+            <h2 class="margin-top-40px">UNIT I</h2>
+            <ol class="olpadding">
+                <li id="user-group-management">
+                    <a href="https://www.redhat.com/sysadmin/linux-user-group-management">Managing users and Managing
+                        groups</a>
+                    &nbsp; &nbsp;
+                    <a
+                        href="https://web.archive.org/web/https://www.redhat.com/sysadmin/linux-user-group-management">[cached]</a>
+                </li>
 
-            <li>
-                <a href="https://www.redhat.com/sysadmin/manage-permissions">Managing permissions</a>
-                &nbsp; &nbsp;
-                <a href="https://web.archive.org/web/https://www.redhat.com/sysadmin/manage-permissions">[cached]</a>
-            </li>
+                <li>
+                    <a id="managing-permissions" href="https://www.redhat.com/sysadmin/manage-permissions">Managing
+                        permissions</a>
+                    &nbsp; &nbsp;
+                    <a
+                        href="https://web.archive.org/web/https://www.redhat.com/sysadmin/manage-permissions">[cached]</a>
+                </li>
 
-            <li>
-                <a href="https://www.redhat.com/sysadmin/managing-users-passwd">Managing passwords</a>
-                &nbsp; &nbsp;
-                <a
-                    href="https://web.archive.org/web/20230724161048/https://www.redhat.com/sysadmin/managing-users-passwd">[cached]</a>
+                <li id="managing-passwords">
+                    <a href="https://www.redhat.com/sysadmin/managing-users-passwd">Managing passwords</a>
+                    &nbsp; &nbsp;
+                    <a
+                        href="https://web.archive.org/web/20230724161048/https://www.redhat.com/sysadmin/managing-users-passwd">[cached]</a>
 
-                <br>
-                <div class="code codespace-up">
-                    $ sudo passwd [username] [parameter]
-                </div>
-                <p>Here are some comman parameter used to manage passwords</p>
-                <ul>
-                    <li>-S = See the STATUS of the user account password</li>
-                    <li>-l = used to LOCK the user password</li>
-                    <li>-u = to UNLOCK the user account password</li>
-                    <li>-d = to DELETE the password (user will login the account without password)</li>
-                    <li>-e = immedatly EXPIRE the password. force user to change the password by expiring user password
-                    </li>
-                    <li>-n = user won't able to change the password before the NUMBER given with -n</li>
-                    <li>-x = the MAX number of days remain valid after that user got promt to change the password</li>
-                    <li>-w = get WARN by receiving warnings that the password will expire.</li>
-                    <li>-i = account get expire if user INACTIVE or didn't change the password after the expire time
-                    </li>
-
-
-                </ul>
-            </li>
-
-            <li>
-                <a
-                    href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/system_administrators_guide/chap-gaining_privileges">Granting
-                    system Administrator privileges to regular user</a>
-                &nbsp; &nbsp;
-                <a
-                    href="https://web.archive.org/web/20231206194412/https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/system_administrators_guide/chap-gaining_privileges">[cached]</a>
-                <p>Two way to grant Administration privileges</p>
-                <ol>
-                    <li>by adding user in sudo or wheel group</li>
-
-                    <div class="code">$ sudo usermod -a -G wheel [username]</div>
-
-
-                    <p>or</p>
-
-                    <div class="code codespace-down">
-                        $ sudo usermod -a -G sudo [username]
+                    <br>
+                    <div class="code codespace-up">
+                        $ sudo passwd [username] [parameter]
                     </div>
-                    <li>by editing /etc/sudoers file and add line [username] ALL=(ALL) ALL</li>
-                    <div class="code">
-                        $ sudo nano /etc/sudoers
-                    </div>
-                    <p> </p>
-
-                </ol>
-            </li>
-
-            <li>
-                <a href="https://www.digitalocean.com/community/tutorials/how-to-set-filesystem-quotas-on-ubuntu-20-04">
-                    Disk Quotas</a>
-                &nbsp; &nbsp;
-                <a
-                    href="https://web.archive.org/web/https://www.digitalocean.com/community/tutorials/how-to-set-filesystem-quotas-on-ubuntu-20-04">[cached]</a>
-                <p>Quotas are used to limit the amount of disk space a user or group can use on a filesystem. Without
-                    such limits, a user could fill up the machine’s disk and cause problems for other users and
-                    services.
-                <ol>
-                    <!-- step 1 -->
-                    <li>
-                        <h3>Installing the Quota Tools</h3>
-                    </li>
-                    <p>Install the quota package by using your linux distrubution package manager i.e apt, yum or dnf
-                        and pacman,
-                        here is an example of installing of quota package on debian distro using apt </p>
-                    <div class="code">$ sudo apt install quota</div>
-
-                    <!-- step 2 -->
-                    <li>
-                        <h3>Updating filesystem mount options</h3>
-                    </li>
-                    <p>To activate quotas on a particular filesystem, you need to mount it with a few quota-related
-                        options specified. You can do this by updating the filesystem’s entry in the /etc/fstab
-                        configuration file</p>
-                    <p>Update the line pointing to the root filesystem by replacing the defaults option with the
-                        appending usrquota,grpquota options using nano or vim editor</p>
-                    <div class="code">
-                        # / was on /dev/sda1 during installation <br>
-                        UUID=e89ac59c-bad7-4da2-aa9a-537fea9a646e / ext4 errors=remount-ro,usrquota,grpquota 0 1
-
-                    </div>
-                    <p>Remount the filesystem to make the new options take effect</p>
-                    <div class="code">$ sudo mount -o remount /</div>
-
-                    <!-- step 3 -->
-                    <li>
-                        <h3>checking and enabling quotas</h3>
-                    </li>
-                    <p>Before finally turning on the quota system, you need to manually run the quotacheck command once
-                    </p>
-                    <div class="code">$ sudo quotacheck -ug /</div>
-                    <p>This command creates the files /aquota.user and /aquota.group. These files contain information
-                        about the limits and usage of the filesystem, and they need to exist before you turn on quota
-                        monitoring</p>
+                    <p>Here are some comman parameter used to manage passwords</p>
                     <ul>
-                        <li>u: specifies that a user-based quota file should be created</li>
-                        <li>g: indicates that a group-based quota file should be created</li>
+                        <li>-S = See the STATUS of the user account password</li>
+                        <li>-l = used to LOCK the user password</li>
+                        <li>-u = to UNLOCK the user account password</li>
+                        <li>-d = to DELETE the password (user will login the account without password)</li>
+                        <li>-e = immedatly EXPIRE the password. force user to change the password by expiring user
+                            password
+                        </li>
+                        <li>-n = user won't able to change the password before the NUMBER given with -n</li>
+                        <li>-x = the MAX number of days remain valid after that user got promt to change the password
+                        </li>
+                        <li>-w = get WARN by receiving warnings that the password will expire.</li>
+                        <li>-i = account get expire if user INACTIVE or didn't change the password after the expire time
+                        </li>
+
+
                     </ul>
+                </li>
 
-                    <p>Now Enable or turn on the quota system</p>
+                <li id="grant-sudo">
+                    <a
+                        href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/system_administrators_guide/chap-gaining_privileges">Granting
+                        system Administrator privileges to regular user</a>
+                    &nbsp; &nbsp;
+                    <a
+                        href="https://web.archive.org/web/20231206194412/https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/system_administrators_guide/chap-gaining_privileges">[cached]</a>
+                    <p>Two way to grant Administration privileges</p>
+                    <ol>
+                        <li>by adding user in sudo or wheel group</li>
 
-                    <div class="code">$ sudo quotaon -v /</div>
+                        <div class="code">$ sudo usermod -a -G wheel [username]</div>
 
-                    <!-- step 4 -->
-                    <li>
-                        <h3>Using quotas</h3>
-                    </li>
-                    <p>There are a few ways you can set quotas for users or groups. Here, you’ll go over how to set
-                        quotas with both the edquota and setquota commands</p>
 
-                    <ul>
-                        <li>Set a User Quota</li>
-                        <ol>
-                            <!-- first way -->
-                            <li>By using edquota</li>
-                            <p>Use the edquota command to edit quotas</p>
-                            <div class="code">$ sudo edquota -u [username]</div>
-                            <p>The -u option specifies that this is a user quota you’ll be editing. If you’d like to
-                                edit a
-                                group’s quota instead, use the -g option in its place.</p>
-                            <p>Save and close the file. To check the new quota you can use the quota command</p>
-                            <div class="code codespace-down">$ sudo quota -vs [username]</div>
+                        <p>or</p>
 
-                            <!-- second way -->
-                            <li>By using setquota </li>
-                            <p>Unlike edquota, setquota will update your user’s quota information in a single command,
-                                without
-                                an interactive editing step. You will specify the username and the soft and hard limits
-                                for both
-                                block- and inode-based quotas, and finally the filesystem to apply the quota to</p>
-                            <div class="code codespace-down">$ sudo setquota -u [username] 500M 700M 0 0 /</div>
+                        <div class="code codespace-down">
+                            $ sudo usermod -a -G sudo [username]
+                        </div>
+                        <li>by editing /etc/sudoers file and add line [username] ALL=(ALL) ALL</li>
+                        <div class="code">
+                            $ sudo nano /etc/sudoers
+                        </div>
+                        <p> </p>
+
+                    </ol>
+                </li>
+
+                <li id="disk-quotas">
+                    <a
+                        href="https://www.digitalocean.com/community/tutorials/how-to-set-filesystem-quotas-on-ubuntu-20-04">
+                        Disk Quotas</a>
+                    &nbsp; &nbsp;
+                    <a
+                        href="https://web.archive.org/web/https://www.digitalocean.com/community/tutorials/how-to-set-filesystem-quotas-on-ubuntu-20-04">[cached]</a>
+                    <p>Quotas are used to limit the amount of disk space a user or group can use on a filesystem.
+                        Without
+                        such limits, a user could fill up the machine’s disk and cause problems for other users and
+                        services.
+                    <ol>
+                        <!-- step 1 -->
+                        <li>
+                            <h3>Installing the Quota Tools</h3>
+                        </li>
+                        <p>Install the quota package by using your linux distrubution package manager i.e apt, yum or
+                            dnf
+                            and pacman,
+                            here is an example of installing of quota package on debian distro using apt </p>
+                        <div class="code">$ sudo apt install quota</div>
+
+                        <!-- step 2 -->
+                        <li>
+                            <h3>Updating filesystem mount options</h3>
+                        </li>
+                        <p>To activate quotas on a particular filesystem, you need to mount it with a few quota-related
+                            options specified. You can do this by updating the filesystem’s entry in the /etc/fstab
+                            configuration file</p>
+                        <p>Update the line pointing to the root filesystem by replacing the defaults option with the
+                            appending usrquota,grpquota options using nano or vim editor</p>
+                        <div class="code">
+                            # / was on /dev/sda1 during installation <br>
+                            UUID=e89ac59c-bad7-4da2-aa9a-537fea9a646e / ext4 errors=remount-ro,usrquota,grpquota 0 1
+
+                        </div>
+                        <p>Remount the filesystem to make the new options take effect</p>
+                        <div class="code">$ sudo mount -o remount /</div>
+
+                        <!-- step 3 -->
+                        <li>
+                            <h3>checking and enabling quotas</h3>
+                        </li>
+                        <p>Before finally turning on the quota system, you need to manually run the quotacheck command
+                            once
+                        </p>
+                        <div class="code">$ sudo quotacheck -ug /</div>
+                        <p>This command creates the files /aquota.user and /aquota.group. These files contain
+                            information
+                            about the limits and usage of the filesystem, and they need to exist before you turn on
+                            quota
+                            monitoring</p>
+                        <ul>
+                            <li>u: specifies that a user-based quota file should be created</li>
+                            <li>g: indicates that a group-based quota file should be created</li>
+                        </ul>
+
+                        <p>Now Enable or turn on the quota system</p>
+
+                        <div class="code">$ sudo quotaon -v /</div>
+
+                        <!-- step 4 -->
+                        <li>
+                            <h3>Using quotas</h3>
+                        </li>
+                        <p>There are a few ways you can set quotas for users or groups. Here, you’ll go over how to set
+                            quotas with both the edquota and setquota commands</p>
+
+                        <ul>
+                            <li>Set a User Quota</li>
+                            <ol>
+                                <!-- first way -->
+                                <li>By using edquota</li>
+                                <p>Use the edquota command to edit quotas</p>
+                                <div class="code">$ sudo edquota -u [username]</div>
+                                <p>The -u option specifies that this is a user quota you’ll be editing. If you’d like to
+                                    edit a
+                                    group’s quota instead, use the -g option in its place.</p>
+                                <p>Save and close the file. To check the new quota you can use the quota command</p>
+                                <div class="code codespace-down">$ sudo quota -vs [username]</div>
+
+                                <!-- second way -->
+                                <li>By using setquota </li>
+                                <p>Unlike edquota, setquota will update your user’s quota information in a single
+                                    command,
+                                    without
+                                    an interactive editing step. You will specify the username and the soft and hard
+                                    limits
+                                    for both
+                                    block- and inode-based quotas, and finally the filesystem to apply the quota to</p>
+                                <div class="code codespace-down">$ sudo setquota -u [username] 500M 700M 0 0 /</div>
+
+
+
+                            </ol>
+
+                            <!-- generating quotas report -->
+                            <li>Generating quota report</li>
+                            <p>To generate a report on current quota usage for all users on a particular filesystem, use
+                                the repquota command</p>
+                            <div class="code codespace-down">
+                                $ sudo repquota -s /
+
+                            </div>
+
+                            <!-- setting up the grace period -->
+                            <li>Setting up the grace period</li>
+                            <p>You can configure the period of time where a user is allowed to float above the soft
+                                limit. Use the setquota</p>
+                            <div class="code">$ sudo setquota -t 864000 864000 /</div>
+
+
+
+                        </ul>
+
+
+                    </ol>
+                    </p>
+                </li>
+
+            </ol>
+
+            <!-- unit v -->
+
+            <h2 class="margin-top-40px">UNIT V</h2>
+            <ol class="olpadding">
+                <li id="Setting-Up-a-SSH-Server"><a href="#">Setting Up a SSH Server</a>
+                    <p>Using Secure Shell protocol we able to logging into a remote machine for
+                        executing commands on a remote machine. It is intended to provide secure encrypted
+                        communications between two hosts over a network.SSH provides a secure
+                        alternative to traditional, less secure
+                        protocols like Telnet and FTP
+                    </p>
+
+                    <ol>
+                        <li>
+                            <h3>Installation</h3>
+
+                            <p>by default most of the linux distrubution already include ssh package if it didn't we can
+                                install
+                                it throught the package manager such as apt, yum, pacman and more. installing ssh on
+                                debian
+                                based system is as follows
+                            </p>
+
+
+                            <div class="code">$ sudo apt install openssh-server</div>
+
+                        </li>
+
+
+
+
+                        <li>
+                            <h3>Starting ssh service</h3>
+                            <p>once it install we need to start the ssh service by typing follwing command</p>
+                            <div class="code">$ sudo systemctl start ssh</div>
+
+                            <p>ssh demon is now active to see the service is started or maybe got error while starting service can be seen by type following command</p>
+                            <div class="code">$ sudo systemctl status ssh</div>
+
+                            <p>to make the service presistant and active on every reboot can be done by the following
+                                command
+                            </p>
+                            <div class="code">$ sudo systemctl enable ssh</div>
+                            
+
+                        </li>
+
+                        <li>
+
+                            <h3>Remote login as ssh</h3>
+
+                            <p>SSH connections can be done in two ways</p>
+                            <ul>
+                                <li>
+                                    <h3>
+                                        Password-based Authentication
+                                    </h3>
+                                </li>
+                                <p>Users can log in using their username and password, just like traditional login
+                                    methods.
+                                    However, this method is less secure, and it is recommended to use other
+                                    authentication
+                                    methods.
+                                </p>
+
+                                <p>
+                                    through password we logs into the specified destination, which may be specified as ssh
+                                    [user]@[ip-address] after that it will ask the password of that user 
+                                </p>
+                                <div class="code">$ ssh root@192.168.0.10</div>
+                                <li>
+                                    <h3>
+                                        key based authetication
+                                    </h3>
+                                </li>
+                                <p>The more secure method involves key pairs – a private key on the client side
+                                    and a public key on the server side. The server verifies the client's identity using
+                                    the
+                                    public key, and the client proves its identity by possessing the corresponding
+                                    private key.
+                                </p>
+
+                                <p>
+                                    Users can generate and manage their key pairs using tools like <span
+                                        class="pkg">ssh-keygen</span>. ssh-keygen can generate key pairs in various
+                                    encryption algorithms such as RSA, DSA, ED25519 and ECDSA
+                                    <div class="code">$ ssh-keygen -t rsa -b 4096</div>
+                                </p>
+
+                                <p>
+                                    through private key, we logs into the specified destination, which may be specified as ssh
+                                    [user]@[ip-address] -i [private key location]
+                                </p>
+
+                                <p>first add the public key into server that can be done using following command</p>
+                                <div class="code">$ ssh-copy-id root@192.168.0.10 -i ~/.ssh/id_rsa.pub</div>
+
+                                <p>now login as a root using ssh</p>
+
+
+                                <div class="code">$ ssh root@192.168.0.10 -i ~/.ssh/id_rsa </div>
+
+                        
+
+
+                            </ul>
 
                             
 
-                        </ol>
-
-                        <!-- generating quotas report -->
-                        <li>Generating quota report</li>
-                        <p>To generate a report on current quota usage for all users on a particular filesystem, use the repquota command</p>
-                        <div class="code codespace-down">
-                            $ sudo repquota -s /
-
-                        </div>
-                        
-                        <!-- setting up the grace period -->
-                        <li>Setting up the grace period</li>
-                        <p>You can configure the period of time where a user is allowed to float above the soft limit. Use the setquota</p>
-                        <div class="code">$ sudo setquota -t 864000 864000 /</div>
+                        </li>
 
 
+                        <li>
+                            <h3>Configuration</h3>
+                            <p>SSH is highly configurable through its configuration file. ssh_config on clients and
+                                sshd_config
+                                on servers. Users can define various settings, including security parameters, connection
+                                options, and more.</p>
 
-                    </ul>
+                        </li>
 
 
-                </ol>
-                </p>
-            </li>
+                    </ol>
 
-        </ol>
 
+                </li>
+
+            </ol>
+
+        </div>
     </div>
+
 </body>
 
 </html>

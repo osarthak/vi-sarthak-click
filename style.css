@@ -2,21 +2,75 @@
     font-family: Arial, Helvetica, sans-serif;
     background-color: #181717;
     color: wheat;
+    --mul-bg-color : #292929;
+    --border-radius: 5px;
+    --fg-color: wheat;
+    --default-size: 20px;
+    --left-menu-radius: 10px;
+    --code-fn-family: Menlo, monospace;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+  
 
 .main {
     width: 950px;
     height: auto;
     /* border: 2px red solid; */
-    margin-left: auto;
-    margin-right: auto;
+    /* margin-left: auto;
+    margin-right: auto; */
 }
+
+.flex {
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    gap: 20px;
+    
+}
+
+.college-list{
+    background-color: var(--mul-bg-color);
+    border-radius: var(--border-radius);
+    padding: 15px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.fg-color{
+    color: var(--fg-color);
+    font-size: var(--default-size);
+}
+
+
+
+#left-menu {
+
+    height: 100%;
+    width: 300px;
+    background-color: rgb(53, 53, 53);
+    margin-top: 100px;
+
+    border-radius: 10px;
+    /* margin-top: 180px; */
+    position: sticky;
+    top: 20px;
+    padding-inline: 20px;
+}
+
+.hide-on-desktop{
+    display: none;
+}
+
+
+
 h1{
     text-decoration: underline;
 }
 
-h2{
+.margin-top-40px{
     margin-top: 40px;
 }
 
@@ -54,10 +108,23 @@ ul {
     cursor: pointer;
 }
 
+.cursor{
+    cursor: pointer;
+}
+
 .btn:hover{
     background-color: wheat;
     color: #292929;
     transition: ease-in-out 0.4s;
+}
+
+.pkg {
+    padding: 3px;
+    padding-inline: 5px;
+    border-radius: 5px;
+    border: 1px solid black;
+    background-color: var(--mul-bg-color);
+    font-family: var(--code-fn-family);
 }
 
 .inline {
@@ -75,6 +142,15 @@ ul {
 .margin-top-25{
     margin-top: 25px;
 }
+
+.margin-bottom-5{
+    margin-bottom: 5px;
+}
+
+.margin-bottom-10{
+    margin-bottom: 10px;
+}
+
 .code{
     padding: 10px 8px;
     background-color: #292929;
@@ -87,15 +163,34 @@ ul {
     white-space: nowrap;
 }
 
+.center-text{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
 a {
     /* color: #7c7c7c;  */
     color: #6e6e71;
-    text-decoration: wavy;
+    /* text-decoration: wavy; */
+    text-decoration: none;
     font-size: 20px;
 
 }
 
+#left-menu a {
+    font-size: 17px;
+    color: white;
+    
+}
+
 li{
+    margin-bottom: 10px;
+}
+
+.less-margin {
+    margin-top: 0px;
     margin-bottom: 10px;
 }
 
@@ -109,6 +204,17 @@ a:hover{
    
 }
 
+/* a:active {
+    color: yellow;
+} */
+
+
+#left-menu a:hover{
+    text-decoration: underline;
+    color: #818181;
+   
+}
+
 .view-style{
     background-color: #141414;
     border-radius: 5px;
@@ -117,15 +223,50 @@ a:hover{
     padding: 10px;
 }
 
+/* anchor tag */
+#disk-quotas {
+  
+    scroll-margin-block-start: 15px;
+    /*Adds margin to the top of the viewport*/
+    
+    /* scroll-margin-block-end: 110pxx; */
+    /*Adds margin to the bottom of the viewport*/
+}
+
+
+@media only screen and (max-width: 1280px) {
+    #left-menu{
+        position:sticky;
+        width: 95%;
+        height: auto;
+        margin-top: 80px;
+        
+        padding: 10px;
+        display: none;
+    }
+
+    .floating-btn {
+        padding: 20px;
+        background-color: #414142;
+        position: fixed;
+        top: 15px;
+        right: 15px;
+        border-radius: var(--border-radius);
+    }
+
+
+    .hide-on-desktop{
+        display:block;
+    }
+    
+
+}
+
 
 @media only screen and (max-width: 1000px) {
     p {
         font-size: 16px;
     }
-
-    /* html {
-        font-size: 14px;
-    } */
 
     .main{
         width: 95%;
@@ -143,4 +284,63 @@ a:hover{
         font-size: 18px;
     
     }
+
+
+    .flex{
+        display:block;
+    }
+
+
+    #left-menu{
+        position:sticky;
+        width: 95%;
+        height: auto;
+        margin-top: 80px;
+        
+        padding: 10px;
+        display: none;
+    }
+
+    .left-menu-mobile{
+        width: 95%;
+        padding: 1px;
+        /* height: 20px; */
+        background-color: var(--mul-bg-color);
+        border-radius: var(--left-menu-radius);
+    }
+
+    .left-menu-mobile p{
+        text-align: center;
+        
+        
+    }
+
+    .floating-btn {
+        padding: 20px;
+        background-color: #414142;
+        position: fixed;
+        top: 15px;
+        right: 15px;
+        border-radius: var(--border-radius);
+    }
+
+    .position-sticky{
+        position: sticky;
+        
+    }
+
+    .hide-on-desktop{
+        display:block;
+    }
+    
+
+    /* .left-menu-mobile:active + .left-menu{
+        background-color: var(--fg-color);
+        display: block;
+
+    } */
+
+
+
+  
 }
