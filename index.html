@@ -22,7 +22,7 @@
             <h2>Table of content</h2>
 
             <ol>
-                
+
                 <h3 class="margin-top-25 margin-bottom-10"> UNIT I</h3>
                 <li><a href="#user-group-management">Managing users and Managing groups</a> </li>
                 <li><a href="#managing-permissions">Managing permissions</a></li>
@@ -32,8 +32,18 @@
                 <li><a href="#disk-quotas">Disk Quotas</a></li>
             </ol>
 
+
+            <!-- unit iv -->
             <ol>
-                
+
+                <h3 class="margin-top-25 margin-bottom-10">UNIT IV</h3>
+                <li><a href="#Choosing-a-Backup-Strategy">Choosing a Backup Strategy</a> </li>
+            </ol>
+
+
+
+            <ol>
+
                 <h3 class="margin-top-25 margin-bottom-10">UNIT V</h3>
                 <li><a href="#Setting-Up-a-SSH-Server">Setting Up an SSH Server</a> </li>
             </ol>
@@ -51,6 +61,18 @@
                 <p class=" inline margin-10 margin-right-15">View syllabus </p> <a href="download/vi.pdf"><button
                         class="ac-color btn">View</button></a>
             </div>
+
+            <!-- reference book -->
+            <div class="margin-top-25 view-style">
+                <p class=" inline margin-10 margin-right-15">reference book found <a
+                        href="http://astroa.physics.metu.edu.tr/MANUALS/fedora-7-unleashed.pdf"> here</a> </p> <a
+                    href="download/fedora-7-unleashed.pdf"><button class="ac-color btn">View</button></a>
+            </div>
+
+
+            <!-- ################### -->
+            <!-- unit I starts here -->
+            <!-- ################### -->
             <h2 class="margin-top-40px">UNIT I</h2>
             <ol class="olpadding">
                 <li id="user-group-management">
@@ -249,8 +271,127 @@
 
             </ol>
 
-            <!-- unit v -->
+            <!-- ################### -->
+            <!-- unit IV starts here -->
+            <!-- ################### -->
+            <h2 class="margin-top-40px">UNIT IV</h2>
+            <ol class="olpadding">
+                <li id="Choosing-a-Backup-Strategy">
+                    <a href="#">Choosing a Backup Strategy</a>
 
+                    <ol>
+                        <li>Backup Levels</li>
+                        <ol>
+                            <li>
+                                full backup or backup level 0
+                            </li>
+                            <p>
+                                full backup is also know as level 0 which you take a full backup of the entire file
+                                usually on every months depends on sysadmin.
+                            </p>
+
+                            <li>Differential Backup or backup level 1</li>
+                            <p>
+                                Differntial backup also known for backup level 1. This type of backup involves backing
+                                up data that was created or changed since the last full backup from level 0.level 1
+                                backup usually on every week.
+                            </p>
+
+                            <li>incremental backup or level 2...finite</li>
+                            <p>
+                                backups will only store changes that were made or added to the previous backup from
+                                previous level backup such as backup level 2. level 2 backup usually on every day.
+                            </p>
+                        </ol>
+
+                        <p>some of strategies on taking backup as follows</p>
+                        <ol>
+                            <li>
+                                Simple Strategy
+                            </li>
+                            <p>
+                                In this Strategy we take backup of the config files from users home directory or /etc
+                                directory
+                            </p>
+
+                            <li>Full Backup on a Periodic Basis</li>
+                            <p>
+                                This backup strategy involves a backup of the complete file system on a weekly,
+                                biweekly,
+                                or other periodic basis
+                            </p>
+                            <p>a tools like <a href="https://github.com/linuxmint/timeshift" class="pkg">timeshift</a>
+                                developed by linuxmint can be used to take a snapshot</p>
+
+                            <li>Full Backups with Incremental Backups</li>
+                            <p>
+                                This scheme involves performing a full backup of the entire system once a week, along
+                                with a daily incremental backup of only those files that have changed in the previous
+                                day.
+
+
+                            </p>
+
+                            <p>
+                                This backup scheme can be advanced in two ways. In one way, each incremental backup
+                                can be made with reference to the original full backup. In other words, a level 0 backup
+                                is
+                                followed by a series of level 1 backups. The benefit of this backup scheme is that a
+                                restoration requires only two tapes (the full backup and the most recent incremental
+                                backup).
+                            </p>
+                            <p>
+                                Modern commercial backup applications such as Amanda and BRU assist in organizing
+                                the process of managing complex backup schedules and tracking backup media. Doing it
+                                yourself using the classic dump or employing shell scripts to run tar requires that the
+                                system administrator handle all the organization himself. For this reason, complex
+                                backup
+                                situations are typically handled with commercial software and specialized hardware prod-
+                                ucts that are packaged, sold, and supported by vendors.
+                            </p>
+
+                            <li>
+                                <a href="https://en.wikipedia.org/wiki/RAID">Mirroring Data or RAID Arrays</a>
+                            </li>
+                            <p>
+                                RAID stands for Redundant array of inexpensive disks or redundant array of independent
+                                disks that can mirror a disk.
+                            </p>
+                            <p>
+                                Note that RAID arrays and mirroring systems are just as happy to write corrupt data as
+                                valid data. Moreover, if a file is deleted, a RAID array does not save it. RAID arrays
+                                are best
+                                suited for protecting the current state of a running system, not for providing backups.
+                            </p>
+
+                            <p>
+                                RAID can be configure depending on raid type that can be as follows
+                            </p>
+                            <ol>
+                                <p>Standrad Raid level</p>
+                                <li>RAID 0</li>
+                                <li>RAID 1</li>
+                                <li>RAID 4</li>
+                                <li>RAID 5</li>
+                                <li>RAID 6</li>
+                                <p>nested raid level</p>
+                                <li>RAID 10</li>
+                                <li>RAID 01</li>
+                            </ol>
+                        </ol>
+
+                    </ol>
+
+                </li>
+            </ol>
+
+
+
+
+
+            <!-- ################### -->
+            <!-- unit V starts here -->
+            <!-- ################### -->
             <h2 class="margin-top-40px">UNIT V</h2>
             <ol class="olpadding">
                 <li id="Setting-Up-a-SSH-Server"><a href="#">Setting Up a SSH Server</a>
@@ -285,14 +426,15 @@
                             <p>once it install we need to start the ssh service by typing follwing command</p>
                             <div class="code">$ sudo systemctl start ssh</div>
 
-                            <p>ssh demon is now active to see the service is started or maybe got error while starting service can be seen by type following command</p>
+                            <p>ssh demon is now active to see the service is started or maybe got error while starting
+                                service can be seen by type following command</p>
                             <div class="code">$ sudo systemctl status ssh</div>
 
                             <p>to make the service presistant and active on every reboot can be done by the following
                                 command
                             </p>
                             <div class="code">$ sudo systemctl enable ssh</div>
-                            
+
 
                         </li>
 
@@ -315,8 +457,9 @@
                                 </p>
 
                                 <p>
-                                    through password we logs into the specified destination, which may be specified as ssh
-                                    [user]@[ip-address] after that it will ask the password of that user 
+                                    through password we logs into the specified destination, which may be specified as
+                                    ssh
+                                    [user]@[ip-address] after that it will ask the password of that user
                                 </p>
                                 <div class="code">$ ssh root@192.168.0.10</div>
                                 <li>
@@ -335,11 +478,12 @@
                                     Users can generate and manage their key pairs using tools like <span
                                         class="pkg">ssh-keygen</span>. ssh-keygen can generate key pairs in various
                                     encryption algorithms such as RSA, DSA, ED25519 and ECDSA
-                                    <div class="code">$ ssh-keygen -t rsa -b 4096</div>
+                                <div class="code">$ ssh-keygen -t rsa -b 4096</div>
                                 </p>
 
                                 <p>
-                                    through private key, we logs into the specified destination, which may be specified as ssh
+                                    through private key, we logs into the specified destination, which may be specified
+                                    as ssh
                                     [user]@[ip-address] -i [private key location]
                                 </p>
 
@@ -351,12 +495,12 @@
 
                                 <div class="code">$ ssh root@192.168.0.10 -i ~/.ssh/id_rsa </div>
 
-                        
+
 
 
                             </ul>
 
-                            
+
 
                         </li>
 
