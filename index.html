@@ -278,6 +278,33 @@
             <ol class="olpadding">
                 <li id="Choosing-a-Backup-Strategy">
                     <a href="#">Choosing a Backup Strategy</a>
+                    <p>Creating Backup is essential in linux. The cost of not
+                        having backups is the loss of your critical data. Re-creating
+                        the data from scratch costs time and money, and if the cost
+                        of doing it all again is greater than the cost associated with
+                        backing up, you should be performing backups.
+                    </p>
+
+                    <p>
+                        Some common resons why data lose occurs
+                    <ul>
+                        <li>
+                            hardware fails
+                            and causes data loss
+                        </li>
+                        <li>
+                            you accidentally delete or over-
+                            write a original file
+                        </li>
+
+                        <li>
+                            Some data loss occurs as a result of natural disasters and other circumstances
+                            beyond your control such as a tornado, flood,  earthquake or fire Your data, as well as the
+                            hardware, would likely
+                            be destroyed in such a disaster
+                        </li>
+                    </ul>
+                    </p>
 
                     <ol>
                         <li>Backup Levels</li>
@@ -290,14 +317,18 @@
                                 usually on every months depends on sysadmin.
                             </p>
 
-                            <li><h3>Differential Backup or backup level 1</h3></li>
+                            <li>
+                                <h3>Differential Backup or backup level 1</h3>
+                            </li>
                             <p>
                                 Differntial backup also known for backup level 1. This type of backup involves backing
                                 up data that was created or changed since the last full backup from level 0.level 1
                                 backup usually on every week.
                             </p>
 
-                            <li><h3>incremental backup or level 2...finite</h3></li>
+                            <li>
+                                <h3>incremental backup or level 2...finite</h3>
+                            </li>
                             <p>
                                 backups will only store changes that were made or added to the previous backup from
                                 previous level backup such as backup level 2. level 2 backup usually on every day.
@@ -311,14 +342,17 @@
                             </li>
 
                             <p>
-                                In this Strategy we take backup of the configurations files on a usb-stick, you should archive each user’s home
+                                In this Strategy we take backup of the configurations files on a usb-stick, you should
+                                archive each user’s home
                                 directory,
                                 as well as the entire /etc directory. Between the two, that backup would contain most of
                                 the important files for a small system. Then you can easily restore this data from the
                                 backup media device you have chosen, after a complete reinstall of Fedora, if necessary.
                             </p>
 
-                            <li><h3>Full Backup on a Periodic Basis</h3></li>
+                            <li>
+                                <h3>Full Backup on a Periodic Basis</h3>
+                            </li>
                             <p>
                                 This backup strategy involves a backup of the complete file system on a weekly,
                                 biweekly,
@@ -327,7 +361,9 @@
                             <p>a tools like <a href="https://github.com/linuxmint/timeshift" class="pkg">timeshift</a>
                                 developed by linuxmint can be used to take a snapshot</p>
 
-                            <li><h3>Full Backups with Incremental Backups</h3></li>
+                            <li>
+                                <h3>Full Backups with Incremental Backups</h3>
+                            </li>
                             <p>
                                 This scheme involves performing a full backup of the entire system once a week, along
                                 with a daily incremental backup of only those files that have changed in the previous
