@@ -338,9 +338,9 @@ a:hover{
         font-size: 16px;
     }
     
-    .img-css img{
-        height: 300px;
-        width: 300px;
+    .img-css{
+        height: auto;
+        width: 280px;
     }
 
 
