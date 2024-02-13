@@ -116,6 +116,10 @@ ul li {
     font-size: 18px;
 }
 
+.olpadding li a {
+    font-size: 22px;
+    /* font-weight: bold; */
+}
 
 .olpadding{
     padding: 0px 0px 0px 20px;
