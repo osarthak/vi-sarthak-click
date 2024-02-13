@@ -23,29 +23,31 @@
 
             <ol>
 
-                <h3 class="margin-top-25 margin-bottom-10"> UNIT I</h3>
+                <h2 class="margin-top-25 margin-bottom-10"> UNIT I</h2>
                 <li><a href="#user-group-management">Managing users and Managing groups</a> </li>
                 <li><a href="#managing-permissions">Managing permissions</a></li>
                 <li><a href="#managing-passwords">Managing passwords</a></li>
                 <li><a href="#grant-sudo">Granting
                         system Administrator privileges to regular user</a></li>
                 <li><a href="#disk-quotas">Disk Quotas</a></li>
+               
             </ol>
 
 
             <!-- unit iv -->
             <ol>
 
-                <h3 class="margin-top-25 margin-bottom-10">UNIT IV</h3>
+                <h2 class="margin-top-25 margin-bottom-10">UNIT IV</h2>
                 <li><a href="#Choosing-a-Backup-Strategy">Choosing a Backup Strategy</a> </li>
                 <li><a href="#Choosing-Backup-Hardware-and-Media">Choosing Backup Hardware and Media</a></li>
+                <li><a href="#copying-files">Copying Files</a></li>
             </ol>
 
 
 
             <ol>
 
-                <h3 class="margin-top-25 margin-bottom-10">UNIT V</h3>
+                <h2 class="margin-top-25 margin-bottom-10">UNIT V</h2>
                 <li><a href="#Setting-Up-a-SSH-Server">Setting Up an SSH Server</a> </li>
             </ol>
         </div>
@@ -164,7 +166,7 @@
                     <ol>
                         <!-- step 1 -->
                         <li>
-                            <h3>Installing the Quota Tools</h3>
+                            <h2>Installing the Quota Tools</h2>
                         </li>
                         <p>Install the quota package by using your linux distrubution package manager i.e apt, yum or
                             dnf
@@ -174,7 +176,7 @@
 
                         <!-- step 2 -->
                         <li>
-                            <h3>Updating filesystem mount options</h3>
+                            <h2>Updating filesystem mount options</h2>
                         </li>
                         <p>To activate quotas on a particular filesystem, you need to mount it with a few quota-related
                             options specified. You can do this by updating the filesystem’s entry in the /etc/fstab
@@ -191,7 +193,7 @@
 
                         <!-- step 3 -->
                         <li>
-                            <h3>checking and enabling quotas</h3>
+                            <h2>checking and enabling quotas</h2>
                         </li>
                         <p>Before finally turning on the quota system, you need to manually run the quotacheck command
                             once
@@ -213,7 +215,7 @@
 
                         <!-- step 4 -->
                         <li>
-                            <h3>Using quotas</h3>
+                            <h2>Using quotas</h2>
                         </li>
                         <p>There are a few ways you can set quotas for users or groups. Here, you’ll go over how to set
                             quotas with both the edquota and setquota commands</p>
@@ -311,7 +313,7 @@
                         <li>Backup Levels</li>
                         <ol>
                             <li>
-                                <h3>full backup or backup level 0</h3>
+                                <h2>full backup or backup level 0</h2>
                             </li>
                             <p>
                                 full backup is also know as level 0 which you take a full backup of the entire file
@@ -319,7 +321,7 @@
                             </p>
 
                             <li>
-                                <h3>Differential Backup or backup level 1</h3>
+                                <h2>Differential Backup or backup level 1</h2>
                             </li>
                             <p>
                                 Differntial backup also known for backup level 1. This type of backup involves backing
@@ -328,7 +330,7 @@
                             </p>
 
                             <li>
-                                <h3>incremental backup or level 2...finite</h3>
+                                <h2>incremental backup or level 2...finite</h2>
                             </li>
                             <p>
                                 backups will only store changes that were made or added to the previous backup from
@@ -339,7 +341,7 @@
                         <p>some of strategies on taking backup as follows</p>
                         <ol>
                             <li>
-                                <h3>Simple Strategy</h3>
+                                <h2>Simple Strategy</h2>
                             </li>
 
                             <p>
@@ -352,7 +354,7 @@
                             </p>
 
                             <li>
-                                <h3>Full Backup on a Periodic Basis</h3>
+                                <h2>Full Backup on a Periodic Basis</h2>
                             </li>
                             <p>
                                 This backup strategy involves a backup of the complete file system on a weekly,
@@ -363,7 +365,7 @@
                                 developed by linuxmint can be used to take a snapshot</p>
 
                             <li>
-                                <h3>Full Backups with Incremental Backups</h3>
+                                <h2>Full Backups with Incremental Backups</h2>
                             </li>
                             <p>
                                 This scheme involves performing a full backup of the entire system once a week, along
@@ -431,11 +433,11 @@
                     <p>Any device that can store data can be used to back it up. here are some of them</p>
                     <ol>
                         <li>
-                            <h3>Removable Storage Media</h3>
+                            <h2>Removable Storage Media</h2>
                         </li>
                         <ol>
                             <li>
-                                <h3>CD-RW and DVD+RW/-RW Drives</h3>
+                                <h2>CD-RW and DVD+RW/-RW Drives</h2>
                             </li>
 
                             <p>CD-RW drives are capable of both reading and writing data to CD-RW discs. They use a
@@ -449,7 +451,7 @@
                                 data, offering significantly more space for storing files, multimedia
                                 content.</p>
                             <li>
-                                <h3>USB and Solid-State Drives</h3>
+                                <h2>USB and Solid-State Drives</h2>
                             </li>
                             <p>
                                 A pen drive, also known as a USB flash drive, thumb drive, is a portable
@@ -472,19 +474,21 @@
                                 </p>
                             </ul>
 
-                            <li><h3>FireWire Drives</h3></li>
+                            <li>
+                                <h2>FireWire Drives</h2>
+                            </li>
                             <p> FireWire is a high-speed serial interface standard that was developed by Apple in the
                                 1990s.FireWire (IEEE-1394) hard drives are similar to USB drives; they just use a
                                 different
                                 inter-
                                 face to your computer. Many digital cameras and portable MP3 players use FireWire.
                                 Kernel support is available if you have this hardware.
-                            </p>                   
+                            </p>
 
                         </ol>
-                        
+
                         <li>
-                            <h3>NAS</h3>
+                            <h2>NAS</h2>
                         </li>
 
                         <div class="flex">
@@ -511,10 +515,81 @@
                             either freebsd or linux
                             os can be used as a nas
                         </p>
-                        
+
                     </ol>
 
+
                 </li>
+
+                <li id="copying-files"><a href="">Copying Files</a></li>
+                <p>Often, when you have only a few files that you need to protect from loss or corruption, it
+                    might make better sense to simply copy the individual files to another storage medium
+                    rather than to create an archive of them</p>
+
+                <p>
+                    Using tar is
+                    the traditional choice because older versions of cp did not handle symbolic links and
+                    permissions well at times, causing those attributes (characteristics of the file) to be lost;
+                    tar handled those file attributes in a better manner. cp has been improved to fix those
+                    problems, but tar is still more widely used.
+                </p>
+
+                <ol>
+                    <li><h2>Copying Files Using tar</h2></li>
+                    <p>One choice for copying files into another location is to use the tar command where you
+                        would create a tar file that would be piped to tar to be uncompressed in the new loca-
+                        tion.</p>
+
+                    <div class="code">$ tar cvf - files | (cd target_directory ; tar xpf -)</div>
+
+                    <ul>
+                        <li>
+                            c — Create an archive.
+                        </li>
+                        <li>v — Be Verbose; lists the files processed so we can see that it is working.</li>
+                        <li>f — Use the filename of the archive will be what follows. (In this case, it is -.)</li>
+                        <li>- — Use a buffer; a place to hold data temporarily.</li>
+                    </ul>
+
+                    <li><h2>Compressing, Encrypting, and Sending tar Streams</h2></li>
+                    <p>The file copy techniques using the tar command in the previous section can also be used
+                        to quickly and securely copy a directory structure across a LAN or the Internet (using the
+                        ssh command). </p>
+                    <p>
+                        One way to make use of these techniques is to use the following
+                        command line to first compress the contents of a designated directory, and then decom-
+                        press the compressed and encrypted archive stream into a designated directory on a
+                        remote host
+                    </p>
+
+                    <div class="code">$ tar cvzf - data_folder | ssh remote_host '( cd ~/mybackup_dir; tar xvzf - )'
+                    </div>
+                    <p>
+                        The tar command is used to create, list, and compress the files in the directory named
+                        data_folder. The output is piped through the ssh (secure shell) command and sent to
+                        the remote computer named remote_host. On the remote computer, the stream is then
+                        extracted and saved in the directory named /mybackup_dir. You are prompted for a pass-
+                        word to send the stream.
+                    </p>
+
+                    <li><h2>Copying Files Using cp</h2></li>
+                    <p>To copy files, we could use the cp command. The general format of the command when
+                        used for simple copying is</p>
+
+                    <div class="code">$ cp -a source_directory target_directory</div>
+                    <p>The -a argument is the same as giving -dpR, which would be</p>
+                    <ul>
+                        <li>-d — Dereferences symbolic links (never follows symbolic links) and copies the files
+                            to which they point, instead of copying the links.</li>
+                        <li>
+                            -p — Preserves all file attributes if possible. (File ownership might interfere.)
+                        </li>
+                        <li>
+                            -R — Copies directories recursively.
+                        </li>
+                    </ul>
+                </ol>
+
             </ol>
 
 
@@ -536,7 +611,7 @@
 
                     <ol>
                         <li>
-                            <h3>Installation</h3>
+                            <h2>Installation</h2>
 
                             <p>by default most of the linux distrubution already include ssh package if it didn't we can
                                 install
@@ -554,7 +629,7 @@
 
 
                         <li>
-                            <h3>Starting ssh service</h3>
+                            <h2>Starting ssh service</h2>
                             <p>once it install we need to start the ssh service by typing follwing command</p>
                             <div class="code">$ sudo systemctl start ssh</div>
 
@@ -572,14 +647,14 @@
 
                         <li>
 
-                            <h3>Remote login as ssh</h3>
+                            <h2>Remote login as ssh</h2>
 
                             <p>SSH connections can be done in two ways</p>
                             <ul>
                                 <li>
-                                    <h3>
+                                    <h2>
                                         Password-based Authentication
-                                    </h3>
+                                    </h2>
                                 </li>
                                 <p>Users can log in using their username and password, just like traditional login
                                     methods.
@@ -595,9 +670,9 @@
                                 </p>
                                 <div class="code">$ ssh root@192.168.0.10</div>
                                 <li>
-                                    <h3>
+                                    <h2>
                                         key based authetication
-                                    </h3>
+                                    </h2>
                                 </li>
                                 <p>The more secure method involves key pairs – a private key on the client side
                                     and a public key on the server side. The server verifies the client's identity using
@@ -638,7 +713,7 @@
 
 
                         <li>
-                            <h3>Configuration</h3>
+                            <h2>Configuration</h2>
                             <p>SSH is highly configurable through its configuration file. ssh_config on clients and
                                 sshd_config
                                 on servers. Users can define various settings, including security parameters, connection
