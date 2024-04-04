@@ -73,7 +73,6 @@ html {
 }
 
 
-
 #left-menu {
 
     height: 100%;
@@ -266,6 +265,11 @@ a:hover{
     /* position:sticky; */
     top: 0;
     padding: 10px;
+}
+
+.sticky-top {
+    position: sticky;
+    top: 0;
 }
 
 /* anchor tag */
