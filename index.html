@@ -30,7 +30,7 @@
                 <li><a href="#grant-sudo">Granting
                         system Administrator privileges to regular user</a></li>
                 <li><a href="#disk-quotas">Disk Quotas</a></li>
-               
+
             </ol>
 
 
@@ -40,6 +40,7 @@
                 <h2 class="margin-top-25 margin-bottom-10">UNIT IV</h2>
                 <li><a href="#Choosing-a-Backup-Strategy">Choosing a Backup Strategy</a> </li>
                 <li><a href="#Choosing-Backup-Hardware-and-Media">Choosing Backup Hardware and Media</a></li>
+                <li><a href="#using-backup-software">Using Backup Software</a></li>
                 <li><a href="#copying-files">Copying Files</a></li>
             </ol>
 
@@ -338,7 +339,7 @@
                             </li>
                             <p>
                                 backups will only store changes that were made or added to the previous backup from
-                                previous level backup such as backup level 2. level 2 backup usually on every day.
+                                previous level backup such as backup level 1. level 2 backup usually on every day.
                             </p>
                         </ol>
 
@@ -525,6 +526,49 @@
 
                 </li>
 
+                <li id="using-backup-software">
+                    <a id="Choosing-Backup-Hardware-and-Media" href="">Using Backup Software</a>
+                    <p>Taking backup is crucial part for linux administator and Taking backup is not a easy task, Taking
+                        backup regular bases by manually will take time and it will get complex if there are hundreds of
+                        pc that why
+                        it is easy to use automated backup softwares to take backup. here are some Bakcup software used
+                        to take a full, incremental and regular bases
+
+                    </p>
+                    <ol>
+                        <li><h2>Tar : The Most Basic Backup Tool</h2></li>
+                        <p>In Linux, tar is a command-line utility used for archiving files and directories into a single file (often referred to as a "tarball") or extracting files from an existing tarball. The name "tar" stands for "tape archive," as it was originally designed for creating backups onto magnetic tape, but it's now commonly used for various archiving tasks on disk storage.</p>
+                        <p>Creating a tar: To create a tar containing files and directories, you use the -c
+                            (create) option followed by the name of the tar to be created and the list of files and
+                            directories to be included. For example:</p>
+
+                        <div class="code">tar -cvf archive.tar file1.txt directory1</div>
+                        <p>Extracting from a tarball: To extract files and directories from an existing tarball, you use the -x (extract) option followed by the name of the tarball. For example:</p>
+                        <div class="code">tar -xvf archive.tar</div>
+
+                       
+                        <li><h2>Amanda</h2></li>
+                        <p>Amanda stands for "Advanced Maryland Automatic Network Disk Archiver". It is an open-source backup solution primarily used on Unix-like operating systems, including Linux. Amanda allows system administrators to set up centralized backups of multiple machines on a network to a single tape or disk storage system.</p>
+                        <ul>
+                            <li>Centralized Management</li>
+                            <p> Amanda provides a centralized management system for configuring and scheduling backups across multiple machines on a network.Automatic Backups: Once configured, Amanda can automatically perform backups according to a defined schedule without manual intervention. </p>
+                            <li>Automatic Backups</li>
+                            <p> Once configured, Amanda can automatically perform backups according to a defined schedule without manual intervention.</p>
+                        </ul>
+
+                        <li><h2>Syncthing</h2></li>
+                        <p>Syncthing is an open-source continuous file synchronization program. It is designed to synchronize files between multiple devices securely. Syncthing will sync files from multiple devices. if one new filel god added in one devices it will sync with other devices and the file will presents on other devices too</p>
+                        <p>Syncthing is available for various operating systems such as windows, macos, linux and android. </p>
+                    
+                        <li><h2>Timeshift</h2></li>
+                        <p>Timeshift is a tool that takes incremental snapshots to back up our system. The snapshots that the tool obtains can be used to restore the system to an earlier version.
+                            Also, we can specify an interval for creating snapshots such as daily, weekly and monthly. Since the snapshots usually share common backup files, the space that they occupy can drastically decrease after the first one.</p>
+                        <p>install it on debian based linux distribution</p>
+                        <div class="code"> sudo apt install timeshift</div>
+                    </ol>
+
+                </li>
+
                 <li id="copying-files"><a href="">Copying Files</a></li>
                 <p>Often, when you have only a few files that you need to protect from loss or corruption, it
                     might make better sense to simply copy the individual files to another storage medium
@@ -539,7 +583,9 @@
                 </p>
 
                 <ol>
-                    <li><h2>Copying Files Using tar</h2></li>
+                    <li>
+                        <h2>Copying Files Using tar</h2>
+                    </li>
                     <p>One choice for copying files into another location is to use the tar command where you
                         would create a tar file that would be piped to tar to be uncompressed in the new loca-
                         tion.</p>
@@ -555,7 +601,9 @@
                         <li>- — Use a buffer; a place to hold data temporarily.</li>
                     </ul>
 
-                    <li><h2>Compressing, Encrypting, and Sending tar Streams</h2></li>
+                    <li>
+                        <h2>Compressing, Encrypting, and Sending tar Streams</h2>
+                    </li>
                     <p>The file copy techniques using the tar command in the previous section can also be used
                         to quickly and securely copy a directory structure across a LAN or the Internet (using the
                         ssh command). </p>
@@ -576,7 +624,9 @@
                         word to send the stream.
                     </p>
 
-                    <li><h2>Copying Files Using cp</h2></li>
+                    <li>
+                        <h2>Copying Files Using cp</h2>
+                    </li>
                     <p>To copy files, we could use the cp command. The general format of the command when
                         used for simple copying is</p>
 
